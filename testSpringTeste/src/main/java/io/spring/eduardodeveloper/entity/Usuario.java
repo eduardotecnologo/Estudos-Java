@@ -21,7 +21,32 @@ public class Usuario {
     private int idade;
 
     private String email;
+    
+    private String senha;
 
+    //Recuperando Dados de Usuarios
+    public Usuario() {
+        
+    }
+
+    public Usuario(Usuario usuario) {
+        this.nome = usuario.getNome();
+        this.email = usuario.getEmail();
+        this.senha = usuario.getSenha();
+        this.perfis = usuario.getPerfis();
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+    
+    
+    //FIM
+    
     public String getNome() {
         return nome;
     }

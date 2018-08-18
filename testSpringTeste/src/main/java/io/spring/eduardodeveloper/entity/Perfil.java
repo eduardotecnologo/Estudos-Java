@@ -2,13 +2,14 @@ package io.spring.eduardodeveloper.entity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.security.core.GrantedAuthority;
 
 /**
  *
  * @author Eduardo Alexandre <eduardotecnologo@hotmail.com>
  */
 @Document
-public class Perfil {
+public class Perfil implements GrantedAuthority{
 
     @Id
     private String id;
@@ -29,6 +30,11 @@ public class Perfil {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    @Override
+    public String getAuthority() {
+        return nome;
     }
 
 }
