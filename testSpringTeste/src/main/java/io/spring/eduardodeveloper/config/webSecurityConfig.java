@@ -1,7 +1,6 @@
 package io.spring.eduardodeveloper.config;
 
 import io.spring.eduardodeveloper.repository.MyUserDetailService;
-import java.util.concurrent.ExecutionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +10,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 
 /**
  *
@@ -37,6 +37,11 @@ public class webSecurityConfig extends WebSecurityConfigurerAdapter{
     public void configure(WebSecurity security)throws Exception{
         security.ignoring().antMatchers(HttpMethod.OPTIONS, "/**")
                 .antMatchers(HttpMethod.GET, "/public/**");
+    }
+    @SuppressWarnings("deprecation")
+    @Bean
+    public static NoOpPasswordEncoder passwordEncoder() {
+    return (NoOpPasswordEncoder)   NoOpPasswordEncoder.getInstance();
     }
     
 }

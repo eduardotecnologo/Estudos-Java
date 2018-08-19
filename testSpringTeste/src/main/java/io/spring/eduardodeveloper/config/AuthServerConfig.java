@@ -28,46 +28,43 @@ import org.springframework.security.oauth2.provider.token.store.InMemoryTokenSto
  * @author edr
  */
 @Configuration
-@EnableAuthorizationServer
+@EnableAuthorizationServer 
 public class AuthServerConfig extends AuthorizationServerConfigurerAdapter{
-    
     private TokenStore tokenStore = new InMemoryTokenStore();
-    
-    @Autowired
-    private AuthenticationManager AuthenticationManager;
-    
-    @Autowired
-    @Qualifier("authenticationManagerBean")
-    private MyUserDetailService userDetailService;
-    
-    @Override
-    public void configure (AuthorizationServerEndpointsConfigurer endpointsConfigurer){
-        endpointsConfigurer.tokenStore(this.tokenStore)
-                .authenticationManager(this.AuthenticationManager)
-                .userDetailsService(userDetailService);
-    }
-    
-    @Override
-    public void configure (ClientDetailsServiceConfigurer clients) throws Exception{
-        
-                clients
-                .inMemory()
-                .withClient("mobile")
-                .authorizedGrantTypes("password", "authorization_code", "refresh_token").scopes("bar", "red","write")
-                .refreshTokenValiditySeconds(20000)
-                .accessTokenValiditySeconds(20000)
-                .secret("123");
-                
-    }
-    
-    @Bean
-    @Primary
-    public DefaultTokenServices tokenServices(){
-        DefaultTokenServices tokenServices = new DefaultTokenServices();
-        tokenServices.setSupportRefreshToken(true);
-        tokenServices.setTokenStore(tokenStore);
-        return tokenServices;
-        
-    }
+   @Autowired
+   @Qualifier("authenticationManagerBean")
+   private AuthenticationManager authenticationManager;
+   
+   @Autowired
+   private MyUserDetailService userDetailService;
+   
+   @Override
+   public void configure(AuthorizationServerEndpointsConfigurer endpointsConfigurer){
+       endpointsConfigurer.tokenStore(this.tokenStore)
+               .authenticationManager(this.authenticationManager)
+               .userDetailsService(userDetailService);
+          }
+   
+   public void configure (ClientDetailsServiceConfigurer clients) throws Exception{
+       clients
+               .inMemory()
+               .withClient("mobile")
+               .authorizedGrantTypes("password","authorization_code","refresh_token").scopes("bar","read","write")
+               .refreshTokenValiditySeconds(20000)
+               .accessTokenValiditySeconds(20000)
+               .resourceIds("restservice")
+               .secret("123");
+   }
+   @Bean
+   @Primary
+   public DefaultTokenServices tokenServices(){
+       DefaultTokenServices tokenServices = new DefaultTokenServices();
+       
+       tokenServices.setSupportRefreshToken(true);
+       tokenServices.setTokenStore(tokenStore);
+       return tokenServices;
+   }
+   
+   
     
 }

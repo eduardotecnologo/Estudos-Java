@@ -7,7 +7,6 @@
  *
  */
 package io.spring.eduardodeveloper.config;
-
 import io.spring.eduardodeveloper.entity.Usuario;
 import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;

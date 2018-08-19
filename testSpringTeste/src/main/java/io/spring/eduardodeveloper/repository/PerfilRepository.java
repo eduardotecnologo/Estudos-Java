@@ -8,5 +8,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * @author Eduardo Alexandre <eduardotecnologo@hotmail.com>
  */
 public interface PerfilRepository extends MongoRepository<Perfil, String> {
+    Perfil findByNome(String role_admin);
 
 }

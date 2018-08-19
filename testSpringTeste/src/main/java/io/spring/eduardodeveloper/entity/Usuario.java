@@ -36,6 +36,15 @@ public class Usuario {
         this.perfis = usuario.getPerfis();
     }
 
+    public Usuario(String nome, List<Perfil> perfis, String email, String senha) {
+        this.nome = nome;
+        this.perfis = perfis;
+        this.email = email;
+        this.senha = senha;
+    }
+    
+    
+
     public String getSenha() {
         return senha;
     }
