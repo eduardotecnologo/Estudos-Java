@@ -34,5 +34,5 @@
     "@ionic/app-scripts": "3.1.11",
     "typescript": "~2.6.2"
   },
-  "description": "Tela de Login para aula de Testes Faculdade integrado ao Spring Boot "
+  "description": "Tela de Login para aula de Testes Faculdade integrado ao Spring Boot"
 }
