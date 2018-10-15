@@ -29,7 +29,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jInternalFrame1 = new javax.swing.JInternalFrame();
         jPanelInternal = new javax.swing.JPanel();
+        jButtonCadMedico = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabelPainelFundo = new javax.swing.JLabel();
         jLabelPlanoDeFundoPrincipal = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -54,11 +56,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanelInternal.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanelInternal.setLayout(null);
 
+        jButtonCadMedico.setText("jButton1");
+        jPanelInternal.add(jButtonCadMedico);
+        jButtonCadMedico.setBounds(740, 90, 81, 50);
+
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 0));
         jLabel1.setText("Sistema de Gerenciamento Médico");
         jPanelInternal.add(jLabel1);
         jLabel1.setBounds(700, 380, 380, 60);
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 102, 51));
+        jLabel2.setText("Cadastros");
+        jPanelInternal.add(jLabel2);
+        jLabel2.setBounds(810, 50, 140, 22);
 
         jLabelPainelFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/internalFrame.jpg"))); // NOI18N
         jPanelInternal.add(jLabelPainelFundo);
@@ -71,6 +83,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jInternalFrame1.setBounds(0, 130, 1090, 470);
 
         jLabelPlanoDeFundoPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/background.jpg"))); // NOI18N
+        jLabelPlanoDeFundoPrincipal.setText("está de");
         getContentPane().add(jLabelPlanoDeFundoPrincipal);
         jLabelPlanoDeFundoPrincipal.setBounds(0, 0, 1090, 600);
 
@@ -149,8 +162,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonCadMedico;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelPainelFundo;
     private javax.swing.JLabel jLabelPlanoDeFundoPrincipal;
     private javax.swing.JMenuBar jMenuBar1;
