@@ -5,6 +5,8 @@
  */
 package visao;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author edudeveloper
@@ -79,6 +81,11 @@ public class TelaLogin extends javax.swing.JFrame {
         jButtonAcessar.setBounds(190, 254, 110, 30);
 
         jButton1Cancelar.setText("Sair");
+        jButton1Cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1CancelarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1Cancelar);
         jButton1Cancelar.setBounds(320, 254, 120, 30);
 
@@ -96,9 +103,19 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcessarActionPerformed
+        if(jTextField1User.getText().equals("admin")&& jPasswordField1Pass.getText().equals("123")){
         TelaPrincipal tela = new TelaPrincipal();
         tela.setVisible(true);
+        dispose();    
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Senha ou Usuário Inválidos");
+        }
+        
     }//GEN-LAST:event_jButtonAcessarActionPerformed
+
+    private void jButton1CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1CancelarActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton1CancelarActionPerformed
 
     /**
      * @param args the command line arguments
