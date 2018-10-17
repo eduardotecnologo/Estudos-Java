@@ -48,13 +48,17 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel1.setBounds(220, 110, 50, 50);
 
         jTextField1User.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField1User.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jTextField1User.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(jTextField1User);
         jTextField1User.setBounds(190, 160, 250, 30);
 
         jPasswordField1Pass.setBackground(new java.awt.Color(204, 204, 204));
         jPasswordField1Pass.setForeground(new java.awt.Color(0, 0, 0));
+        jPasswordField1Pass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1PassActionPerformed(evt);
+            }
+        });
         getContentPane().add(jPasswordField1Pass);
         jPasswordField1Pass.setBounds(190, 210, 250, 30);
 
@@ -96,9 +100,9 @@ public class TelaLogin extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextPane1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(320, 140, 9, 23);
+        jScrollPane1.setBounds(320, 140, 9, 24);
 
-        setSize(new java.awt.Dimension(466, 321));
+        setSize(new java.awt.Dimension(465, 333));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -108,7 +112,7 @@ public class TelaLogin extends javax.swing.JFrame {
         tela.setVisible(true);
         dispose();    
         }else{
-            JOptionPane.showMessageDialog(rootPane, "Senha ou Usuário Inválidos");
+            JOptionPane.showMessageDialog(rootPane, "Senha ou Usuário Inválidos!");
         }
         
     }//GEN-LAST:event_jButtonAcessarActionPerformed
@@ -116,6 +120,10 @@ public class TelaLogin extends javax.swing.JFrame {
     private void jButton1CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1CancelarActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton1CancelarActionPerformed
+
+    private void jPasswordField1PassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1PassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1PassActionPerformed
 
     /**
      * @param args the command line arguments
