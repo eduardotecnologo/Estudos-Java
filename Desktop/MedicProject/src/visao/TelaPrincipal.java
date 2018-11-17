@@ -48,6 +48,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItemUser = new javax.swing.JMenuItem();
         jMenuItemAgenda = new javax.swing.JMenuItem();
         jMenuRelatorios = new javax.swing.JMenu();
+        jMenuItemRelatorios = new javax.swing.JMenuItem();
         jMenuFerramentas = new javax.swing.JMenu();
         jMenuItemTelaBemVindo = new javax.swing.JMenuItem();
         jMenuSair = new javax.swing.JMenu();
@@ -200,6 +201,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenuCadastro);
 
         jMenuRelatorios.setText("Relatórios");
+
+        jMenuItemRelatorios.setText("Novo");
+        jMenuItemRelatorios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemRelatoriosActionPerformed(evt);
+            }
+        });
+        jMenuRelatorios.add(jMenuItemRelatorios);
+
         jMenuBar1.add(jMenuRelatorios);
 
         jMenuFerramentas.setText("Ferramentas");
@@ -296,6 +306,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         tela.setVisible(true);
     }//GEN-LAST:event_jMenuItemEnferActionPerformed
 
+    private void jMenuItemRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRelatoriosActionPerformed
+        FormRelatorios tela = new FormRelatorios();
+        tela.setVisible(true);
+    }//GEN-LAST:event_jMenuItemRelatoriosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -351,6 +366,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemCadMedico;
     private javax.swing.JMenuItem jMenuItemCadPaciente;
     private javax.swing.JMenuItem jMenuItemEnfer;
+    private javax.swing.JMenuItem jMenuItemRelatorios;
     private javax.swing.JMenuItem jMenuItemSair;
     private javax.swing.JMenuItem jMenuItemTelaBemVindo;
     private javax.swing.JMenuItem jMenuItemUser;

@@ -48,7 +48,7 @@ public class FormUser extends javax.swing.JFrame {
 
         jLabel4.setText("Setor:");
 
-        jComboBoxSetorUser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medicina", "Dentista", "Veterinario", " " }));
+        jComboBoxSetorUser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medicina", "Dentista", "Veterinario" }));
 
         javax.swing.GroupLayout jInternalFrameInternalUserLayout = new javax.swing.GroupLayout(jInternalFrameInternalUser.getContentPane());
         jInternalFrameInternalUser.getContentPane().setLayout(jInternalFrameInternalUserLayout);
